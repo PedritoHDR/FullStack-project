@@ -1,0 +1,56 @@
+<div class="container">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/listener/v1/home">
+                <img src="/imgs/Listener Logo.png" alt="Logo" width="150" height="50"
+                    class="d-inline-block align-text-top">
+            </a>
+            <div class="dropdown dropdown-center">
+                <i class="fa-solid fs-4 fa-bars btn" style="color: #1db954;" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"></i>
+                <ul class="dropdown-menu dropdown-menu-dark list-group-flush">
+                    <li><a class="dropdown-item" href="/listener/v1/playlists">Playlists</a></li>
+                    <li><a class="dropdown-item" href="/listener/v1/userProfile">Mi Perfil</a></li>
+                    <li><a class="dropdown-item" href="/listener/v1/login">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<section class="bottomgroup">
+    <div class="row leftcontrols container">
+        <div class="col-1">
+            <div class="prevbutton">
+                <a ng-click="prev()"><img src="/imgs/btn-prev.png" /></a>
+            </div>
+            <div class="playbutton">
+                <a ng-click="resume()" ng-hide="playing"><img src="/imgs/btn-play.png" /></a>
+                {{!-- <a ng-click="pause()" ng-show="playing"><img src="/imgs/btn-pause.png" /></a> --}}
+            </div>
+            <div class="nextbutton">
+                <a ng-click="next()"><img src="/imgs/btn-next.png" /></a>
+            </div>
+            <div class="volume">
+                <a href="#">
+                    <input type="range" min="0" max="100" />
+                </a>
+            </div>
+        </div>
+        <div class="seekcontrols">
+            {{!-- <div class="progress">{{ progress | displaytime }}</div>
+            <div class="duration">{{ duration | displaytime }}</div> --}}
+            <div class="progress">
+                <b>0:00</b>
+            </div>
+            <div class="duration">
+                <p>0:00</p>
+            </div>
+            <div class="slider">
+                {{!-- <input type="range" ng-model="progress" ng-change="changeprogress()" min="0" max="{{duration}}" /> --}}
+                <input type="range" min="0" max="100" />
+            </div>
+        </div>
+    </div>
+</section>

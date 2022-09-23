@@ -2,7 +2,7 @@ CREATE DATABASE listener;
 
 \c listener;
 
-CREATE TABLE user(
+CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE friends(
     picture VARCHAR(255),
     is_favorite BOOLEAN NOT NULL,
     user_id INT,
-    FOREIGN KEY(user_id) REFERENCES user(id)
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 CREATE TABLE artists(
@@ -30,7 +30,7 @@ CREATE TABLE artists(
     picture VARCHAR(255),
     is_favorite BOOLEAN NOT NULL,
     user_id INT,
-    FOREIGN KEY(user_id) REFERENCES user(id)
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 CREATE TABLE playlists(
@@ -42,7 +42,7 @@ CREATE TABLE playlists(
     picture VARCHAR(255),
     tracks VARCHAR(30),
     user_id INT,
-    FOREIGN KEY(user_id) REFERENCES user(id)
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 CREATE TABLE songs(
@@ -56,5 +56,5 @@ CREATE TABLE songs(
     gender VARCHAR(30) NOT NULL,
     is_favorite BOOLEAN NOT NULL,
     user_id INT,
-    FOREIGN KEY(user_id) REFERENCES user(id)
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );

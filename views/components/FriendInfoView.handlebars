@@ -1,0 +1,77 @@
+<section class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-1">
+            <a href="/listener/v1/home">
+                <i class="fa-solid fa-2x fa-house btn" style="color: #1db954;" type="button"></i>
+            </a>
+            <div class="text-light" style="color: #ffffff;">
+                <span>
+                    <a href="/listener/v1/playlists">PLAYLISTS</a>
+                </span>
+                <ul>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Music</a></li>
+                </ul>
+            </div>
+            <div class="mt-2">
+                <a href="">
+                    <img src="/imgs/ab67616d0000b2737e5c4e4a636dee0bc997db03.jpeg" alt="Music" width="200">
+                </a>
+                <p>
+                    <b>Title</b>
+                    <a href="">Artist</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-11 container">
+            <div class="mb-3" style="padding-right: 3%;">
+                <h3>NAME</h3>
+            </div>
+            <div id="user-info-img">
+                <img src="/imgs/anonimous.jpg" alt="user" width="200">
+                <table class="table-dark mt-3 table-striped">
+                    <tbody>
+                        <tr>
+                            <td>NAME</td>
+                            <td>PEPE</td>
+                        </tr>
+                        <tr>
+                            <td>EMAIL</td>
+                            <td>pepe@papa.com</td>
+                        </tr>
+                        <tr>
+                            <td>BORN DATE</td>
+                            <td>24-07-1764</td>
+                        </tr>
+                        <tr>
+                            <td>COUNTRY</td>
+                            <td>Cuba</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pt-3">
+                    <span>
+                        <button id="follow-btn" class="btn btn-success me-2">FOLLOW</button>
+                        <button id="unfollow-btn" class="btn btn-success ms-2">UNFOLLOW</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    const followBtn = document.getElementById('follow-btn');
+    followBtn.addEventListener('click', () => {
+        alert('Ha sido agregado a tú lista de amigos');
+    });
+
+    const unfollowBtn = document.getElementById('unfollow-btn');
+    unfollowBtn.addEventListener('click', () => {
+        alert('Ha sido eliminado de tú lista de amigos');
+    });
+
+</script>

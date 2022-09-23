@@ -1,4 +1,7 @@
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+dotenv.config()
+
 const pool = new Pool({
     user: process.env.DATABASE_USER,
     host: process.env.DATABASE_HOST,
@@ -14,6 +17,15 @@ const postUser = async (email, nombre, password, favorite_gender, favorite_song,
     };
     const res = await pool.query(request);
     return res.rows[0];
+};
+
+const getUsers = async (email) => {
+    const request = {
+        text: `SELECT * FROM users WHERE email = $1;`,
+        values: [email]
+    };
+    const { rows } = await pool.query(request);
+    return rows[0];
 };
 
 module.exports = {

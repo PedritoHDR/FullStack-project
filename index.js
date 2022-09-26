@@ -6,15 +6,17 @@ const cors = require('cors');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const axios = require('axios');
+const dotenv = require('dotenv');
 const {
     postUser
 } = require('./js/services/db.service');
 
+dotenv.config();
 const app = express();
 const port = 8080;
 const serverUrl = `http://localhost:${port}`;
-const client_id = '088531e725d0458f86504fa92248017a'; // Your client id
-const client_secret = 'ec3071d53deb49fb945cb96b163a50a2'; // Your secret
+const client_id = process.env.CLIENT_ID; // Your client id
+const client_secret = process.env.CLIENT_SECRET; // Your secret
 const redirect_uri = 'http://localhost:8080/listener/v1/callback'; // Your redirect uri
 let generateRandomString = (length) => {
     let text = '';

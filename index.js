@@ -143,7 +143,7 @@ app.get('/listener/v1/callback', (req, res) => {
                 grant_type: 'authorization_code'
             },
             headers: {
-                'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+                'Authorization': 'Basic ' + (new Buffer.alloc(client_id + ':' + client_secret).toString('base64'))
             },
             json: true
         };
@@ -190,7 +190,7 @@ app.get('/listener/v1/refresh_token', (req, res) => {
     var authOptions = {
         url: 'https://accounts.spotify.com/api/token',
         headers: {
-            'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+            'Authorization': 'Basic ' + (new Buffer.alloc(client_id + ':' + client_secret).toString('base64'))
         },
         form: {
             grant_type: 'refresh_token',
@@ -231,8 +231,8 @@ app.get('/listener/v1/userProfileInfo', (req, res) => {
         res.render('UserProfileInfo');
     }),
 
-    app.get('/listener/v1/friendInfo', (req, res) => {
-        res.render('FriendInfo');
-    });
+app.get('/listener/v1/friendInfo', (req, res) => {
+    res.render('FriendInfo');
+});
 
 app.listen(port, console.log(`SERVER RUNNING ON ${serverUrl}`));
